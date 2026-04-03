@@ -1,0 +1,232 @@
+views:
+  - type: sections
+    max_columns: 6
+    sections:
+      - type: grid
+        cards:
+          - type: picture
+            image: >-
+              https://solarbalance.dk/wp-content/uploads/2024/01/Screenshot-2024-01-16-at-12.47.46.png
+          - type: entities
+            entities:
+              - entity: switch.solarcustxxxx_inverter_automations_toggle
+                name: Aktiver SoBa Styringstilstand
+              - entity: number.solarcustxxxx_soba_delta_buy_level
+                name: Tilpas forv. energibehov
+              - entity: switch.solarcustxxxx_soba_disregard_solar_projection
+                name: Ignorer Solproduktion (f.eks ved snedække)
+                secondary_info: none
+              - entity: switch.solarcustxxxx_soba_electric_heating
+                name: Har du EL som primær opvarmningskilde ?
+              - entity: number.solarcustxxxx_soba_installed_battery_capacity
+                name: Samlet Batterikapacitet
+              - entity: number.solarcustxxxx_soba_high_batt_soc_limit
+                name: Maks. Ladegrænse
+              - entity: number.solarcustxxxx_soba_low_batt_soc_limit
+                name: Min. Afladningsgrænse
+              - entity: number.solarcustxxxx_soba_tillaeg_spotpris
+                name: Tillæg til Spotprisen
+              - entity: switch.solarcustxxxx_soba_allow_e_mail_warnings
+                name: Tillad SoBa Advarsels Mails
+            state_color: true
+            title: SoBa Grundindstillinger
+            show_header_toggle: false
+          - type: entities
+            entities:
+              - entity: switch.solarcustXXXX_soba_ev_in_household
+                secondary_info: none
+                name: Er der en elbil i husstanden ?
+              - entity: switch.solarcustXXXX_soba_ev_surplus_charge
+                name: Aktiver opladning fra overskudssol
+                icon: mdi:solar-power
+                secondary_info: none
+              - entity: switch.solarcustXXXX_soba_ev_pricebased_charge
+                name: Aktiver opladning fra net baseret på elprisen
+                icon: mdi:transmission-tower
+              - entity: number.solarcustXXXX_soba_ev_charge_duration
+                name: Varighed af elbilsopladning i timer
+                secondary_info: none
+              - entity: text.solarcustXXXX_soba_ev_charge_end_time
+                name: Seneste tidspunkt hvor elbilsopladning skal være afsluttet!
+                secondary_info: none
+            state_color: true
+            show_header_toggle: false
+            title: SoBa Elbilsstyring
+      - type: grid
+        cards:
+          - chart_type: line
+            period: 5minute
+            type: statistics-graph
+            entities:
+              - entity: sensor.solarcustxxxx_total_grid_power
+                name: Samlet Forbrug fra Elnet
+              - entity: sensor.solarcustxxxx_total_solar_power
+                name: Samlet Solproduktion
+              - entity: sensor.solarcustxxxx_battery_output_power
+                name: Samlet Forbrug fra Batteri
+            stat_types:
+              - mean
+            title: El Produktion og Forbrug
+            hide_legend: false
+            days_to_show: 1
+          - chart_type: line
+            period: hour
+            type: statistics-graph
+            entities:
+              - entity: sensor.solarcustxxxx_fortjeneste_maned_til_dato
+                name: Fortjeneste
+            title: Fortjeneste måned til dato
+            stat_types:
+              - state
+            logarithmic_scale: false
+            days_to_show: 7
+            hide_legend: true
+          - chart_type: line
+            period: 5minute
+            type: statistics-graph
+            entities:
+              - entity: sensor.solarcustxxxx_battery_charge_level
+                name: Batteri ladeniveau
+            title: Batteri Niveau
+            logarithmic_scale: false
+            days_to_show: 1
+            stat_types:
+              - mean
+            hide_legend: true
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.solarcustxxxx_text2
+                name: ' '
+                icon: mdi:robot
+              - entity: sensor.solarcustxxxx_text10
+                name: ' '
+              - entity: sensor.solarcustxxxx_vehicle_status
+                name: ' '
+            title: SoBa Planlægning
+            state_color: true
+          - type: entities
+            entities:
+              - entity: sensor.solarcustxxxx_projected_solar_energy_today_corrected
+                name: Forventet Solenergi, Resten af Dagen
+              - entity: sensor.solarcustxxxx_projected_solar_energy_tomorrow_corrected
+                name: Forventet Solenergi, Imorgen
+              - entity: sensor.solarcustxxxx_avg_daily_consumption_06to10
+                name: '  Dit gns. behov mellem kl 06-10 er'
+              - entity: sensor.solarcustxxxx_avg_daily_consumption_10to17
+                name: ' Dit gns. behov mellem kl 10-17 er '
+              - entity: sensor.solarcustxxxx_avg_daily_consumption_17to21
+                name: ' Dit gns. behov mellem kl 17-21 er '
+              - entity: sensor.solarcustxxxx_avg_daily_consumption_21to06
+                name: ' Dit gns. behov mellem kl 21-06 er '
+            title: ' Egenproduktion og Energibehov'
+            state_color: true
+          - type: entities
+            entities:
+              - entity: sensor.solarcustxxxx_fortjeneste_maned_til_dato
+                name: Fortjeneste måned til dato
+              - entity: sensor.solarcustxxxx_text1
+                name: ' Din købspris for EL i nuværende periode '
+              - entity: sensor.solarcustxxxx_text6
+                name: ' '
+              - entity: sensor.solarcustxxxx_text7
+                name: ' '
+              - entity: sensor.solarcustxxxx_text8
+                name: ' '
+              - entity: sensor.solarcustxxxx_text9
+                name: ' '
+            title: Elpriser
+    cards: []
+    title: SolarBalance Styring
+  - type: sections
+    max_columns: 3
+    title: SolarBalance Inverter
+    path: soba-inverter
+    sections:
+      - type: grid
+        cards:
+          - type: picture
+            image: >-
+              https://solarbalance.dk/wp-content/uploads/2024/01/Screenshot-2024-01-16-at-12.47.46.png
+          - type: entities
+            entities:
+              - entity: sensor.solarcustXXXX_energy_priority
+                name: Energi Prioritering
+              - entity: switch.solarcustXXXX_grid_charge_when_batt_first
+                name: Oplad Batteri fra Elnet (Hvis "Battery First")
+              - entity: select.solarcustXXXX_export_limiter
+                name: Begræns Salg af Strøm
+              - entity: number.solarcustXXXX_batt_charge_limit
+                name: Nuv. Lade/Afladegrænse
+              - entity: button.solarcustXXXX_load_first
+                name: Aktiver "Load First"
+              - entity: number.solarcustXXXX_loadfirst_batt_discharge_limit
+                name: Afladegr ved  "Load First"
+              - entity: button.solarcustXXXX_battery_first
+                name: Aktiver "Battery First"
+              - entity: number.solarcustXXXX_batt_first_charge_limit
+                name: Ladegr. under "Battery First"
+              - entity: number.solarcustXXXX_batt_first_charge_power_rate
+                name: Max tilladte ladehastighed
+              - entity: button.solarcustXXXX_grid_first
+              - entity: number.solarcustXXXX_batt_discharge_limit
+                name: Afladegr. ved "Grid First"
+              - entity: number.solarcustXXXX_gridfirst_discharge_power_rate
+                name: Tilladt Afladningshastighed
+            title: Inverter Funktionstilstand
+            state_color: true
+            show_header_toggle: false
+      - type: grid
+        cards:
+          - chart_type: line
+            period: 5minute
+            type: statistics-graph
+            entities:
+              - entity: sensor.solarcustXXXX_total_grid_power
+                name: Samlet Forbrug fra Elnet
+              - entity: sensor.solarcustXXXX_total_solar_power
+                name: Samlet Solproduktion
+              - entity: sensor.solarcustXXXX_battery_output_power
+                name: Samlet Forbrug fra Batteri
+            stat_types:
+              - mean
+            days_to_show: 1
+            title: El Produktion og Forbrug
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.solarcustXXXX_battery_charge_level
+                name: Batteri Ladeniveau
+              - entity: sensor.solarcustXXXX_battery_temperature
+                name: Batteri temperatur
+              - entity: sensor.solarcustXXXX_battery_output_power
+                name: Batteri effektudgang
+              - entity: sensor.solarcustXXXX_total_solar_power
+                name: Aktuelle Solcelleproduktion
+              - entity: sensor.solarcustXXXX_total_grid_power
+                name: Aktuelle Køb fra Elnettet
+              - entity: sensor.solarcustXXXX_daily_pv_production
+                name: Dagens Solcelleproduktion
+              - entity: sensor.solarcustXXXX_daily_energy_sold
+                name: Dagens Salg af Strøm til Elnettet
+              - entity: sensor.solarcustXXXX_daily_energy_bought
+                name: Dagens Køb af Strøm fra Elnettet
+            title: Inverter Data
+            state_color: true
+          - type: entities
+            entities:
+              - entity: sensor.solarcustXXXX_total_consumption
+                name: Livstids Energiforbrug
+              - entity: sensor.solarcustXXXX_total_energy_bought
+                name: Livstid Energi Købt
+              - entity: sensor.solarcustXXXX_total_energy_sold
+                name: Livstid Energi Solgt
+              - entity: sensor.solarcustXXXX_total_pv_production
+                name: Livstid Solproduktion
+            title: Inverter Data Historiske
+            state_color: true
+            show_header_toggle: false
+    cards: []
+ 
