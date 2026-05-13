@@ -58,12 +58,14 @@ views:
             period: 5minute
             type: statistics-graph
             entities:
-              - entity: sensor.solarcustxxxx_total_grid_power
+              - entity: sensor.solarcustXXXX_total_grid_power
                 name: Samlet Forbrug fra Elnet
-              - entity: sensor.solarcustxxxx_total_solar_power
+              - entity: sensor.solarcustXXXX_total_solar_power
                 name: Samlet Solproduktion
-              - entity: sensor.solarcustxxxx_battery_output_power
+              - entity: sensor.solarcustXXXX_battery_output_power
                 name: Samlet Forbrug fra Batteri
+              - entity: sensor.solarcustXXXX_soba_car_power
+                name: SoBa opladning af elbil
             stat_types:
               - mean
             title: El Produktion og Forbrug
@@ -124,17 +126,19 @@ views:
             state_color: true
           - type: entities
             entities:
-              - entity: sensor.solarcustxxxx_fortjeneste_maned_til_dato
+              - entity: sensor.solarcustXXXX_fortjeneste_maned_til_dato
                 name: Fortjeneste måned til dato
-              - entity: sensor.solarcustxxxx_text1
+              - entity: sensor.solarcustXXXX_soba_elpris
+                name: Din SoBa optimerede elpris
+              - entity: sensor.solarcustXXXX_text1
                 name: ' Din købspris for EL i nuværende periode '
-              - entity: sensor.solarcustxxxx_text6
+              - entity: sensor.solarcustXXXX_text6
                 name: ' '
-              - entity: sensor.solarcustxxxx_text7
+              - entity: sensor.solarcustXXXX_text7
                 name: ' '
-              - entity: sensor.solarcustxxxx_text8
+              - entity: sensor.solarcustXXXX_text8
                 name: ' '
-              - entity: sensor.solarcustxxxx_text9
+              - entity: sensor.solarcustXXXX_text9
                 name: ' '
             title: Elpriser
     cards: []
