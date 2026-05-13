@@ -1,5 +1,4 @@
-Deye Inverters:
-
+Deye Inverters: null
 views:
   - type: sections
     max_columns: 6
@@ -82,6 +81,8 @@ views:
                 name: Samlet Solproduktion
               - entity: sensor.solarcustXXXX_battery_output_power
                 name: Samlet Forbrug fra Batteri
+              - entity: sensor.solarcustXXXX_soba_car_power
+                name: SoBa opladning af elbil
             stat_types:
               - mean
             title: El Produktion og Forbrug
@@ -114,6 +115,23 @@ views:
             state_color: true
           - type: entities
             entities:
+              - entity: sensor.solarcustXXXX_fortjeneste_maned_til_dato
+                name: Fortjeneste måned til dato
+              - entity: sensor.solarcustXXXX_soba_elpris
+                name: Din SoBa optimerede elpris
+              - entity: sensor.solarcustXXXX_text1
+                name: ' Din købspris for EL i nuværende periode '
+              - entity: sensor.solarcustXXXX_text6
+                name: ' '
+              - entity: sensor.solarcustXXXX_text7
+                name: ' '
+              - entity: sensor.solarcustXXXX_text8
+                name: ' '
+              - entity: sensor.solarcustXXXX_text9
+                name: ' '
+            title: Elpriser
+          - type: entities
+            entities:
               - entity: sensor.solarcustXXXX_projected_solar_energy_today_corrected
                 name: Forventet Solenergi, Resten af Dagen
               - entity: sensor.solarcustXXXX_projected_solar_energy_tomorrow_corrected
@@ -128,21 +146,6 @@ views:
                 name: ' Dit gns. behov mellem kl 21-06 er '
             title: ' Egenproduktion og Energibehov'
             state_color: true
-          - type: entities
-            entities:
-              - entity: sensor.solarcustXXXX_fortjeneste_maned_til_dato
-                name: Fortjeneste måned til dato
-              - entity: sensor.solarcustXXXX_text1
-                name: ' Din købspris for EL i nuværende periode '
-              - entity: sensor.solarcustXXXX_text6
-                name: ' '
-              - entity: sensor.solarcustXXXX_text7
-                name: ' '
-              - entity: sensor.solarcustXXXX_text8
-                name: ' '
-              - entity: sensor.solarcustXXXX_text9
-                name: ' '
-            title: Elpriser
     cards: []
     title: SolarBalance Styring
   - type: sections
