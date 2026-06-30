@@ -65,7 +65,7 @@ views:
             entities:
               - entity: sensor.solarcustXXXX_fortjeneste_maned_til_dato
                 name: Fortjeneste
-            title: Fortjeneste måned til dato
+            title: Fortjeneste, fortløbende
             stat_types:
               - state
             logarithmic_scale: false
@@ -116,11 +116,11 @@ views:
           - type: entities
             entities:
               - entity: sensor.solarcustXXXX_fortjeneste_maned_til_dato
-                name: Fortjeneste måned til dato
+                name: Fortjeneste, fortløbende
               - entity: sensor.solarcustXXXX_soba_elpris
                 name: Din SoBa optimerede elpris
               - entity: sensor.solarcustXXXX_text1
-                name: ' Din købspris for EL i nuværende periode '
+                name: ' Din købspris for EL i nuværende kvarter '
               - entity: sensor.solarcustXXXX_text6
                 name: ' '
               - entity: sensor.solarcustXXXX_text7
