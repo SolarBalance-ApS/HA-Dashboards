@@ -131,7 +131,7 @@ views:
               - entity: sensor.solarcustXXXX_soba_elpris
                 name: Din SoBa optimerede elpris
               - entity: sensor.solarcustXXXX_text1
-                name: ' Din købspris for EL i nuværende periode '
+                name: ' Din købspris for EL i nuværende kvarter '
               - entity: sensor.solarcustXXXX_text6
                 name: ' '
               - entity: sensor.solarcustXXXX_text7
